@@ -11,10 +11,13 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "docker"
-  env: "Docker-env"
-  bucket_name: "elasticbeanstalk-us-west-2-306476627547"
-  bucket_path: "docker"
+  app: "dockerWithReact"
+  env: "Dockerwithreact-env"
+  # created automatically from beanstalk on S3 (part of Hard drive to store zipped files of app)
+  bucket_name: "elasticbeanstalk-us-east-2-172890911092"
+#   Same name as app
+  bucket_path: "dockerWithReact"  
+  # deploy just when any change on master
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
