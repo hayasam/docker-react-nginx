@@ -1,0 +1,6 @@
+git push origin hayafeature
+git commit -m "create branch feature"
+git push origin
+git add .
+git pull origin
+git checkout -b hayafeature
