@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t stephengrider/docker-react -f Dockerfile.dev .
+  - docker build -t hayasam/docker-react-nginx -f Dockerfile.dev .
 
 script:
-  - docker run stephengrider/docker-react npm run test -- --coverage
+  - docker run hayasam/docker-react-nginx npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
@@ -19,7 +19,7 @@ deploy:
   bucket_path: "dockerWithReact"  
   # deploy just when any change on master
   on:
-    branch: master
+    branch: main
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key:
     secure: "$AWS_SECRET_KEY"
